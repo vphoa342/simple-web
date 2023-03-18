@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        dockerfile: true
+        dockerfile true
     }
 
 
@@ -10,6 +10,14 @@ pipeline {
                 sh 'docker build -f Dockerfile -t simple-web .'
             }
         }
+
+
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+
        
         // stage('Push Docker Image') {
         //   steps {
